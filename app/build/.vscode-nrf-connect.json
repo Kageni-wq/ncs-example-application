@@ -1,0 +1,22 @@
+{
+  "toolchainPath": "c:\\ncs\\toolchains\\0b393f9e1b",
+  "sdkPath": "c:\\ncs\\v3.0.2",
+  "board": "puuwai/nrf5340/cpuapp",
+  "boardDir": "c:\\Users\\Kagen\\OneDrive\\Documents\\Projects\\nrf\\application\\Stethy_V18.00\\boards\\kiko\\puuwai",
+  "boardDirs": [
+    "c:\\Users\\Kagen\\OneDrive\\Documents\\Projects\\nrf\\application\\Stethy_V18.00\\boards\\kiko\\puuwai"
+  ],
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [
+    "prj.conf"
+  ],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [
+    "boards/puuwai_nrf5340_cpuapp_1.overlay"
+  ],
+  "extraDtcOverlays": [],
+  "boardRoot": "c:\\Users\\Kagen\\OneDrive\\Documents\\Projects\\nrf\\application\\Stethy_V18.00"
+}

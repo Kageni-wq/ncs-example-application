@@ -1,0 +1,4 @@
+C:/Stethy18.00/app/src/modules/system.c:46:13:button_msg_sys_sub_thread	232	dynamic,bounded
+C:/Stethy18.00/app/src/modules/system.c:36:11:GetSystem	0	static
+C:/Stethy18.00/app/src/modules/system.c:41:10:GetSystemAudio	0	static
+C:/Stethy18.00/app/src/modules/system.c:109:5:system_init	40	static

@@ -1,0 +1,12 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/logging/log_msg.h:741:24:log_msg_generic_get_wlen	0	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:170:12:read	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/kernel.h:564:23:k_msleep	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:108:13:on_failed_write	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:120:13:on_write	16	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:137:12:write	32	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:83:12:enable	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:74:12:uninit	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:37:13:timer_handler	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:46:12:init	24	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:186:12:enable_shell_rtt	16	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/backends/shell_rtt.c:200:21:shell_backend_rtt_get_ptr	0	static

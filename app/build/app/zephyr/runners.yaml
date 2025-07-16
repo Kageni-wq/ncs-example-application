@@ -1,0 +1,37 @@
+# Available runners configured by board.cmake.
+runners:
+- nrfjprog
+- nrfutil
+- jlink
+
+# Default flash runner if --runner is not given.
+flash-runner: nrfjprog
+
+# Default debug runner if --runner is not given.
+debug-runner: jlink
+
+# Common runner configuration values.
+config:
+  board_dir: C:/Stethy18.00/boards/kiko/puuwai
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: C:/Stethy18.00/app/build/merged.hex
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb.exe
+  openocd: C:/Program Files/OpenOCD/bin/openocd.exe
+  openocd_search:
+    - C:\Program Files/OpenOCD/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  nrfjprog:
+    []
+
+  nrfutil:
+    []
+
+  jlink:
+    - --dt-flash=y
+    - --device=nrf5340_xxaa_app
+    - --speed=4000

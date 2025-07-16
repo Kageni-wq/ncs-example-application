@@ -1,0 +1,9 @@
+C:/Stethy18.00/app/build/app/zephyr/include/generated/zephyr/syscalls/pwm.h:26:19:pwm_set_cycles	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/pwm.h:537:19:pwm_set	56	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/pwm.h:604:19:pwm_set_pulse_dt	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/pwm.h:583:19:pwm_set_dt	16	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_pwm.c:29:12:led_pwm_blink	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_pwm.c:55:12:led_pwm_set_brightness	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_pwm.c:71:12:led_pwm_on	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_pwm.c:76:12:led_pwm_off	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_pwm.c:81:12:led_pwm_init	96	dynamic,bounded

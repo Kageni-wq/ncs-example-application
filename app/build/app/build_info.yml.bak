@@ -1,0 +1,57 @@
+cmake:
+  application:
+    configuration-dir: C:/Stethy18.00/app
+    source-dir: C:/Stethy18.00/app
+  board:
+    name: puuwai
+    path:
+     - C:/Stethy18.00/boards/kiko/puuwai
+    qualifiers: nrf5340/cpuapp
+    revision: 1
+  devicetree:
+    bindings-dirs:
+     - C:/ncs/v3.0.2/nrf/dts/bindings
+     - C:/Stethy18.00/app/dts/bindings
+     - C:/ncs/v3.0.2/zephyr/dts/bindings
+    files:
+     - C:/Stethy18.00/boards/kiko/puuwai/puuwai_nrf5340_cpuapp.dts
+     - boards/puuwai_nrf5340_cpuapp_1.overlay
+    include-dirs:
+     - C:/ncs/v3.0.2/nrf/include
+     - C:/ncs/v3.0.2/nrf/dts/common
+     - C:/ncs/v3.0.2/nrf/dts/riscv
+     - C:/ncs/v3.0.2/nrf/dts/arm
+     - C:/ncs/v3.0.2/nrf/dts
+     - C:/Stethy18.00/app/dts
+     - C:/ncs/v3.0.2/zephyr/include
+     - C:/ncs/v3.0.2/zephyr/include/zephyr
+     - C:/ncs/v3.0.2/zephyr/dts/common
+     - C:/ncs/v3.0.2/zephyr/dts/x86
+     - C:/ncs/v3.0.2/zephyr/dts/xtensa
+     - C:/ncs/v3.0.2/zephyr/dts/sparc
+     - C:/ncs/v3.0.2/zephyr/dts/riscv
+     - C:/ncs/v3.0.2/zephyr/dts/posix
+     - C:/ncs/v3.0.2/zephyr/dts/nios2
+     - C:/ncs/v3.0.2/zephyr/dts/arm64
+     - C:/ncs/v3.0.2/zephyr/dts/arm
+     - C:/ncs/v3.0.2/zephyr/dts/arc
+     - C:/ncs/v3.0.2/zephyr/dts
+    user-files:
+     - boards/puuwai_nrf5340_cpuapp_1.overlay
+  kconfig:
+    files:
+     - C:/Stethy18.00/boards/kiko/puuwai/puuwai_nrf5340_cpuapp_defconfig
+     - C:/Stethy18.00/app/prj.conf
+     - C:/Stethy18.00/app/build/app/zephyr/.config.sysbuild
+    user-files:
+     - prj.conf
+  toolchain:
+    name: zephyr
+    path: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk
+  vendor-specific:
+    nordic:
+      svdfile: C:/ncs/v3.0.2/modules/hal/nordic/nrfx/mdk/nrf5340_application.svd
+  zephyr:
+    version: 4.0.99
+    zephyr-base: C:/ncs/v3.0.2/zephyr
+version: 0.1.0

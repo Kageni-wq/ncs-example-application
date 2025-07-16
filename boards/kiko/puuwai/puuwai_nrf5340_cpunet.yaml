@@ -1,0 +1,14 @@
+identifier: puuwai/nrf5340/cpunet
+name: PUUWAI-NRF5340-network-MCU
+type: mcu
+arch: arm
+toolchain:
+  - gnuarmemb
+  - xtools
+  - zephyr
+ram: 64
+flash: 256
+supported:
+  - watchdog
+  - gpio
+vendor: kiko

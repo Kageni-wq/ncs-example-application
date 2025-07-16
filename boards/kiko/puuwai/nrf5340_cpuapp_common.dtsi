@@ -1,0 +1,146 @@
+/*
+* Copyright (c) 2025 Kagen Aeby
+*
+* SPDX-License-Identifier: Apache-2.0
+*/
+#include "nrf5340_cpuapp_common-pinctrl.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+    chosen {
+        zephyr,console = &uart0;
+        zephyr,shell-uart = &uart0;
+        zephyr,uart-mcumgr = &uart0;
+        zephyr,bt-mon-uart = &uart0;
+        zephyr,bt-c2h-uart = &uart0;
+        zephyr,bt-hci = &bt_hci_ipc0;
+        zephyr,ieee802154 = &ieee802154;
+    };
+
+    pwmleds {
+        compatible = "pwm-leds";
+        torch_pwm: pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+        };
+    };
+
+    aliases {
+        pwm-led0 = &pwm_led0;
+        watchdog0 = &wdt0;
+    };
+};
+
+&vregmain {
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
+&vregradio {
+    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
+};
+
+&vregh {
+    status = "okay";
+};
+
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&pwm1 {
+    status = "okay";
+    pinctrl-0 = <&pwm1_default>;
+    pinctrl-1 = <&pwm1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&adc {
+    status = "okay";
+};
+
+&gpiote {
+    status = "okay";
+};
+
+&gpio0 {
+    status = "okay";
+    sense-edge-mask = <0xffffffff>;
+};
+
+&gpio1 {
+    status = "okay";
+};
+
+&i2c1 {
+    compatible = "nordic,nrf-twim";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    zephyr,concat-buf-size = <512>;
+
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&i2c2 {
+    compatible = "nordic,nrf-twim";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    pinctrl-0 = <&i2c2_default>;
+    pinctrl-1 = <&i2c2_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&i2c3 {
+    compatible = "nordic,nrf-twim";
+    clock-frequency = <I2C_BITRATE_FAST>;
+
+    pinctrl-0 = <&i2c3_default>;
+    pinctrl-1 = <&i2c3_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&i2s0 {
+	compatible = "nordic,nrf-i2s";
+	status = "okay";
+	pinctrl-0 = <&i2s0_default>;
+	pinctrl-1 = <&i2s0_sleep>;
+	pinctrl-names = "default", "sleep";
+};
+
+/* UART0 GPIOs can be configured for other use-cases */
+&uart0 {
+    current-speed = <115200>;
+    status = "okay";
+    pinctrl-0 = <&uart0_default>;
+    pinctrl-1 = <&uart0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&uart1 {
+    current-speed = <115200>;
+    status = "okay";
+    pinctrl-0 = <&uart1_default>;
+    pinctrl-1 = <&uart1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&timer0 {
+    status = "okay";
+};
+
+&timer1 {
+    status = "okay";
+};
+
+&timer2 {
+    status = "okay";
+};
+
+zephyr_udc0: &usbd {
+	compatible = "nordic,nrf-usbd";
+	status = "okay";
+};
+
+#include <nordic/nrf5340_cpuapp_partition.dtsi>

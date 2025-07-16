@@ -1,0 +1,8 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1628:19:gpio_pin_set_raw	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1668:19:gpio_pin_set	16	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_gpio.c:27:12:led_gpio_set_brightness	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_gpio.c:47:12:led_gpio_off	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_gpio.c:42:12:led_gpio_on	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1044:19:gpio_pin_configure_dt	8	static
+C:/ncs/v3.0.2/zephyr/drivers/led/led_gpio.c:52:12:led_gpio_init	104	dynamic,bounded

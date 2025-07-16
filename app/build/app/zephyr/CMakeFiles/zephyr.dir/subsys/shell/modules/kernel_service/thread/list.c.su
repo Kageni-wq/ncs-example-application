@@ -1,0 +1,3 @@
+C:/ncs/v3.0.2/zephyr/subsys/shell/modules/kernel_service/thread/list.c:110:12:cmd_kernel_thread_list	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/modules/kernel_service/thread/list.c:14:13:rt_stats_dump	64	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/modules/kernel_service/thread/list.c:62:13:shell_tdata_dump	72	static

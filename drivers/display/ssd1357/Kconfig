@@ -1,0 +1,7 @@
+config SSD1357  
+	bool "Custom SSD1357 display driver"
+	default y
+	depends on DT_HAS_ZEPHYR_CUSTOM_SSD1357_ENABLED
+	select SPI
+	help
+	  Enable custom SSD1357 driver

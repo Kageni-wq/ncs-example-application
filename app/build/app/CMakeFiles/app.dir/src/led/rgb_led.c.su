@@ -1,0 +1,6 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/led_strip.h:107:19:led_strip_update_rgb	24	static
+C:/Stethy18.00/app/src/led/rgb_led.c:75:5:rgb_led_set_pixel	8	static
+C:/Stethy18.00/app/src/led/rgb_led.c:203:16:rgb_apply_gamma	8	static
+C:/Stethy18.00/app/src/led/rgb_led.c:91:5:rgb_led_set_all	24	static
+C:/Stethy18.00/app/src/led/rgb_led.c:57:5:rgb_led_init	88	dynamic,bounded
+C:/Stethy18.00/app/src/led/rgb_led.c:112:5:rgb_led_state_update	24	static

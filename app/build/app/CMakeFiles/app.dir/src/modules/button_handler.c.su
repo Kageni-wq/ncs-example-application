@@ -1,0 +1,15 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1292:19:gpio_port_get	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1773:19:gpio_add_callback	8	static
+C:/Stethy18.00/app/src/modules/button_handler.c:66:13:on_button_debounce_timeout	0	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1580:19:gpio_pin_get	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1744:20:gpio_init_callback	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:869:19:z_impl_gpio_pin_interrupt_configure	16	static
+C:/Stethy18.00/app/src/modules/button_handler.c:117:13:button_publish_thread	16	static
+C:/Stethy18.00/app/src/modules/button_handler.c:92:12:pin_msk_to_pin	8	static
+C:/Stethy18.00/app/src/modules/button_handler.c:75:12:pin_to_btn_idx	8	static
+C:/Stethy18.00/app/src/modules/button_handler.c:136:13:button_isr	32	static
+C:/Stethy18.00/app/src/modules/button_handler.c:252:12:cmd_push_btn	32	static
+C:/Stethy18.00/app/src/modules/button_handler.c:240:12:cmd_print_all_btns	24	static
+C:/Stethy18.00/app/src/modules/button_handler.c:170:5:button_pressed	16	static
+C:/Stethy18.00/app/src/modules/button_handler.c:197:5:button_handler_init	16	static

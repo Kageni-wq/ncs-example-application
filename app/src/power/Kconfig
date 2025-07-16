@@ -1,0 +1,18 @@
+
+config ZSW_PMIC_BATTERY_CUTOFF_VOLTAGE_MV
+	int "The voltage at which the system will be powered off. Running batteries as low as possible (until battery protection circuit triggers) will reduce the battery life."
+	depends on DT_HAS_NORDIC_NPM1300_ENABLED
+	default 3300
+	help
+	  Voltage in mV at which the system will be powered off.
+
+config PMIC_STACK_SIZE
+	int "Stack size for PMIC thread"
+	default 1024
+
+config PMIC_THREAD_PRIO
+	int "Thread priority for PMIC thread"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will handle control of PMIC module.

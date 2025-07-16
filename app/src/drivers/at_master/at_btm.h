@@ -1,0 +1,70 @@
+#ifndef _AT_BTM_H_
+#define _AT_BTM_H_
+
+#include "AT_Common.h"
+
+typedef struct {
+    uint8_t addr [6];
+} esp_bd_addr_t;
+
+enum {
+    EV_BTM_START,
+    EV_BTM_ACK,
+    EV_BTM_READY,
+    EV_BTM_CONN,
+    EV_BTM_DISCONN,
+    EV_BTM_VOLUME,
+    EV_BTM_POWER_ON,
+    EV_BTM_POWER_OFF,
+    EV_BTM_PAIRED,
+    EV_BTM_SCAN,
+    EV_BTM_FILTER,
+    EV_BTM_AUDIO,
+    EV_BTM_BOOT,
+    EV_BTM_UNKNOWN,
+    END_OF_BTM_EVENTS
+};
+
+enum {
+    START_OF_BTM_COMMANDS,
+    CMD_BTM_ACK,
+    CMD_BTM_START,
+    CMD_BTM_INCREASE_VOLUME,
+    CMD_BTM_DECREASE_VOLUME,
+    CMD_BTM_SET_MODE,
+    CMD_BTM_PAIR,
+    CMD_BTM_UNPAIR,
+    CMD_BTM_POWER_ON,
+    CMD_BTM_POWER_OFF,
+    CMD_BTM_STATUS_REQUEST,
+    CMD_BTM_CONNECT_TO_DEVICE,
+    CMD_BTM_FORGET_DEVICE,
+    CMD_BTM_SET_DEVICE_NAME,
+    CMD_BTM_MUTE,
+    CMD_BTM_UNMUTE,
+    CMD_BTM_SET_FILTER,
+    CMD_BTM_SET_VOLUME,
+    CMD_BTM_BATTERY_LEVEL,
+    CMD_BTM_RESET,
+    CMD_BTM_DISCOVERABLE,
+    END_OF_BTM_COMMANDS
+};
+
+int ATM_BtmInit(int id);
+
+// Handler function prototypes
+void BTM_HandleAckEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleReadyEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleConnectedEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleDisconnectedEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleVolumeEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandlePowerOnEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandlePowerOffEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandlePairedEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleScanEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleFilterEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleAudioEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleBootEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+void BTM_HandleUnknownEvent(char param[CONFIG_MAX_PARAMS_PER_EVENT][CONFIG_MAX_PARAM_LENGTH]);
+
+#endif

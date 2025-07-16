@@ -1,0 +1,12 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1292:19:gpio_port_get	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1773:19:gpio_add_callback	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1580:19:gpio_pin_get	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1044:19:gpio_pin_configure_dt	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1744:20:gpio_init_callback	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:869:19:z_impl_gpio_pin_interrupt_configure	16	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_gpio_keys.c:59:13:gpio_keys_poll_pin	40	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_gpio_keys.c:108:28:gpio_keys_change_deferred	8	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_gpio_keys.c:127:13:gpio_keys_interrupt	8	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_gpio_keys.c:142:12:gpio_keys_interrupt_configure	16	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_gpio_keys.c:168:12:gpio_keys_init	96	dynamic,bounded

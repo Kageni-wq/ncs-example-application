@@ -1,0 +1,16 @@
+description: GPIO pin to control power to torch leds
+
+compatible: "power-switch"
+
+child-binding:
+  description: The GPIOs controlling the pins for torch leds
+  properties:
+    gpios:
+     type: phandle-array
+     required: true
+    label:
+      type: string
+      description: |
+        Human readable string describing the LED. It can be used by an
+        application to identify this LED or to retrieve its number/index
+        (i.e. child node number) on the parent device.

@@ -1,0 +1,27 @@
+menu "AT_Master"
+
+config MAX_PARAMS_PER_EVENT
+	int "Max number of parameters per event"
+	default 3
+
+config MAX_PARAM_LENGTH
+	int "Max length of each parameter"
+	default 64
+
+config MAX_EVENT_LENGTH
+	int "Max length of event name"
+	default 64
+
+config UART_RX_BUF_SIZE
+	int "UART RX buffer size"
+	default 64
+
+config UART_RX_TIMEOUT_MS
+	int "UART RX timeout in milliseconds"
+	default 100
+
+config ATM_AUDIO_LOG_LEVEL
+	int "ATM Audio log level"
+	default 3
+
+endmenu # Serial

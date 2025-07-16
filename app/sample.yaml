@@ -2,13 +2,14 @@
 # the Zephyr testing tool. In this file, multiple combinations can be specified,
 # so that you can easily test all of them locally or in CI.
 sample:
-  description: Example application
-  name: example-application
+  description: Stethy
+  name: Stethy18.00
 common:
   sysbuild: true
   build_only: true
   integration_platforms:
-    - custom_plank
+    - puuwai/nrf5340/cpuapp
+    - puuwai/nrf5340/cpunet
     - nrf54l15dk/nrf54l15/cpuapp
 tests:
   app.default: {}

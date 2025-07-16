@@ -13,3 +13,40 @@ endmenu
 module = APP
 module-str = APP
 source "subsys/logging/Kconfig.template.log_config"
+
+menuconfig STETHY
+	 bool "Stethy [EXPERIMENTAL]"
+	 select EXPERIMENTAL
+
+if STETHY
+
+#----------------------------------------------------------------------------#
+rsource "Kconfig.defaults"
+
+#----------------------------------------------------------------------------#
+menu "Logging"
+
+module = MAIN
+module-str = main
+source "subsys/logging/Kconfig.template.log_config"
+
+module = MODULE_LED
+module-str = module-led
+source "subsys/logging/Kconfig.template.log_config"
+
+config PRINT_STACK_USAGE_MS
+	depends on THREAD_ANALYZER && INIT_STACKS
+	int "Print stack usage every x milliseconds"
+	default 5000
+
+endmenu # Log levels
+
+#----------------------------------------------------------------------------#
+
+rsource "src/drivers/at_master/Kconfig"
+rsource "src/audio/Kconfig"
+rsource "src/power/Kconfig"
+rsource "src/led/Kconfig"
+
+endif # STETHY
+

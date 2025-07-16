@@ -1,0 +1,26 @@
+cmake:
+  application:
+    source-dir: C:/ncs/v3.0.2/zephyr/share/sysbuild
+  board:
+    name: puuwai
+    path:
+     - C:/Stethy18.00/boards/kiko/puuwai
+    qualifiers: nrf5340/cpuapp
+    revision: 1
+  images:
+   - name: app
+     source-dir: C:/Stethy18.00/app
+     type: MAIN
+  kconfig:
+    files:
+     - C:/Stethy18.00/app/build/_sysbuild/empty.conf
+     - C:/Stethy18.00/app/build/_sysbuild/empty.conf
+     - C:/Stethy18.00/app/build/_sysbuild/empty.conf
+    user-files:
+     - C:/Stethy18.00/app/build/_sysbuild/empty.conf
+  sysbuild: ON
+version: 0.1.0
+west:
+  command: C:\ncs\toolchains\0b393f9e1b\opt\bin\Scripts\west build --build-dir c:/Stethy18.00/app/build c:/Stethy18.00/app --pristine --board puuwai/nrf5340/cpuapp -- -DCONF_FILE=prj.conf -DDTC_OVERLAY_FILE=boards/puuwai_nrf5340_cpuapp_1.overlay -DBOARD_ROOT=c:/stethy18.00
+  topdir: c:\ncs\v3.0.2
+  version: 1.2.0

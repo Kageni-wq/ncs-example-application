@@ -1,0 +1,2 @@
+# Load Sysbuild board Kconfig descriptions.
+osource "C:/Stethy18.00/boards/kiko/puuwai/Kconfig.sysbuild"

@@ -1,0 +1,2 @@
+
+add_subdirectory_ifdef(CONFIG_SSD1357 ssd1357)

@@ -1,0 +1,10 @@
+C:/Stethy18.00/app/build/app/zephyr/include/generated/zephyr/syscalls/pwm.h:26:19:pwm_set_cycles	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/pwm.h:537:19:pwm_set	56	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/pwm.h:583:19:pwm_set_dt	16	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1044:19:gpio_pin_configure_dt	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1628:19:gpio_pin_set_raw	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/gpio.h:1668:19:gpio_pin_set	16	static
+C:/Stethy18.00/app/src/led/torch_led.c:25:5:torch_led_init	144	dynamic,bounded
+C:/Stethy18.00/app/src/led/torch_led.c:54:5:torch_led_power_control	72	dynamic,bounded
+C:/Stethy18.00/app/src/led/torch_led.c:105:5:torch_led_set_brightness	8	static

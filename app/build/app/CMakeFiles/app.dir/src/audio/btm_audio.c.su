@@ -1,0 +1,13 @@
+C:/Stethy18.00/app/src/audio/btm_audio.c:126:13:btm_audio_init	32	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:146:13:btm_audio_stop	8	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:156:13:btm_handle_output_change	8	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:167:13:btm_handle_volume_change	8	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:185:13:btm_handle_message	16	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:58:13:btm_uart_cb	16	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:32:10:GetBtmAudio	0	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:37:5:GetBtmPower	0	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:42:5:GetBtmId	0	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:47:22:GetBtmUartDev	0	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:52:6:IsBtmInit	0	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:196:5:btm_init	8	static
+C:/Stethy18.00/app/src/audio/btm_audio.c:76:6:btm_audio_thread	32	static

@@ -1,0 +1,16 @@
+board:
+  name: puuwai
+  vendor: nordic
+  socs:
+  - name: 'nrf5340'
+    variants:
+    - name: 'ns'
+      cpucluster: 'cpuapp'
+  revision:
+    format: number
+    default: "1"
+    exact: false
+    revisions:
+    - name: "1"
+    - name: "2"
+    - name: "3"

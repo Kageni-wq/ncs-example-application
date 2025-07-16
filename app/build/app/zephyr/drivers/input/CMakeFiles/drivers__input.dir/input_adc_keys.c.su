@@ -1,0 +1,7 @@
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/adc.h:742:19:adc_channel_setup_dt	8	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/adc.h:867:19:adc_raw_to_millivolts	24	static
+C:/ncs/v3.0.2/zephyr/include/zephyr/drivers/adc.h:895:19:adc_raw_to_millivolts_dt	8	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_adc_keys.c:47:23:adc_keys_read	16	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_adc_keys.c:70:20:adc_keys_process	40	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_adc_keys.c:144:13:adc_keys_work_handler	16	static
+C:/ncs/v3.0.2/zephyr/drivers/input/input_adc_keys.c:156:12:adc_keys_init	64	dynamic,bounded

@@ -1,0 +1,132 @@
+config MAIN_THREAD_PRIORITY
+	default 10
+
+config MAIN_STACK_SIZE
+	default 1800 if SD_CARD_PLAYBACK
+	default 1600
+
+config SYSTEM_WORKQUEUE_STACK_SIZE
+	default 1200
+
+# As long as thread names are used, config must be set to "y"
+config THREAD_NAME
+	default y
+
+config ZBUS
+	default y
+
+config ZBUS_RUNTIME_OBSERVERS
+	default y
+
+config ZBUS_MSG_SUBSCRIBER
+	default y
+
+# Enable SPI interface
+config SPI
+	default y
+
+config I2C
+	default y
+
+config BUTTON_DEBOUNCE_MS
+	int "Button debounce time in ms"
+	default 50
+
+config NRFX_I2S0
+	default y
+
+config PCM_MIX
+	default y
+
+
+#----------------------------------------------------------------------------#
+menu "Log levels"
+
+module = MODULE_AUDIO_USB
+module-str = module-audio-usb
+source "subsys/logging/Kconfig.template.log_config"
+
+module = MODULE_BUTTON_HANDLER
+module-str = module-button-handler
+source "subsys/logging/Kconfig.template.log_config"
+
+module = MODULE_SYSTEM
+module-str = module-system
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Log levels
+
+#----------------------------------------------------------------------------#
+menu "Thread priorities"
+
+config BUTTON_PUBLISH_THREAD_PRIO
+	int "Priority for button publish thread"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will publish button events to zbus.
+
+config BUTTON_MSG_SUB_THREAD_PRIO
+	int "Thread priority for button subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to button events from zbus.
+
+config DEVICE_MSG_SUB_THREAD_PRIO
+	int "Thread priority for device subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to device events from zbus.
+
+config SYSTEM_THREAD_PRIO
+	int "Thread priority for system thread"
+	default 3
+	help
+	  This is a preemptible thread.
+	  This thread will handle system events.
+
+endmenu # Thread priorities
+
+#----------------------------------------------------------------------------#
+menu "Stack sizes"
+
+config BUTTON_PUBLISH_STACK_SIZE
+	int "Stack size for button publish thread"
+	default 450
+
+config VOLUME_MSG_SUB_STACK_SIZE
+	int "Stack size for volume message subscribe thread"
+	default 768
+
+config BUTTON_MSG_SUB_STACK_SIZE
+	int "Stack size for button subscriber"
+	default 2048
+
+config DEVICE_MSG_SUB_STACK_SIZE
+	int "Stack size for device subscriber"
+	default 1024
+
+config SYSTEM_THREAD_STACK_SIZE
+	int "Stack size for system thread"
+	default 1024
+
+endmenu # Stack sizes
+
+#----------------------------------------------------------------------------#
+menu "Zbus"
+
+config BUTTON_MSG_SUB_QUEUE_SIZE
+	int "Queue size for button subscriber"
+	default 4
+
+config CONTENT_CONTROL_MSG_SUB_QUEUE_SIZE
+	int "Queue size for content control subscriber"
+	default 4
+
+config DEVICE_MSG_SUB_QUEUE_SIZE
+	int "Queue size for device subscriber"
+	default 4
+
+endmenu # Zbus

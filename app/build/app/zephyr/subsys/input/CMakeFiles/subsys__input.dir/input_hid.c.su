@@ -1,0 +1,2 @@
+C:/ncs/v3.0.2/zephyr/subsys/input/input_hid.c:109:9:input_to_hid_code	0	static
+C:/ncs/v3.0.2/zephyr/subsys/input/input_hid.c:126:9:input_to_hid_modifier	0	static

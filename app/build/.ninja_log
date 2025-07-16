@@ -1,0 +1,16 @@
+# ninja log v5
+1	211	7742042128429387	C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-mkdir	6ddc8b5fb5b2ac5e
+1	211	7742042128429387	_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-mkdir	6ddc8b5fb5b2ac5e
+212	281	7742042129123798	_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-download	10373cec952e0ec5
+10	15527	7742219050667252	build.ninja	c0fc93b55e15a851
+212	281	7742042129123798	C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-download	10373cec952e0ec5
+349	411	7742042130425251	C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-patch	966c78852dfb2262
+349	411	7742042130425251	_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-patch	966c78852dfb2262
+281	348	7742042129800844	_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-update	b7974fdd41a20631
+281	348	7742042129800844	C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-update	b7974fdd41a20631
+411	476	7742042131090291	_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-configure	4f24726982db4c40
+411	476	7742042131090291	C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-configure	4f24726982db4c40
+1	9	0	clean	c053c0af7612443b
+13	17411	7742219050667252	build.ninja	c0fc93b55e15a851
+0	11	0	clean	c053c0af7612443b
+0	11	0	clean	c053c0af7612443b

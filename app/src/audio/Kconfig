@@ -1,0 +1,152 @@
+#
+# Copyright (c) 2022 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+rsource "Kconfig.defaults"
+
+menu "Audio"
+
+#----------------------------------------------------------------------------#
+menu "Log levels"
+
+module = AUDIO_SYSTEM
+module-str = audio-system
+source "subsys/logging/Kconfig.template.log_config"
+
+module = SW_CODEC_SELECT
+module-str = sw-codec-select
+source "subsys/logging/Kconfig.template.log_config"
+
+module = STREAMCTRL
+module-str = streamctrl
+source "subsys/logging/Kconfig.template.log_config"
+
+module = AUDIO_DATAPATH
+module-str = audio-datapath
+source "subsys/logging/Kconfig.template.log_config"
+
+module = AUDIO_SYNC_TIMER
+module-str = audio-sync-timer
+source "subsys/logging/Kconfig.template.log_config"
+
+module = LE_AUDIO_RX
+module-str = le-audio-rx
+source "subsys/logging/Kconfig.template.log_config"
+
+module = BTM_AUDIO
+module-str = btm-audio
+source "subsys/logging/Kconfig.template.log_config"
+
+module = DSP_AUDIO
+module-str = dsp-audio
+source "subsys/logging/Kconfig.template.log_config"
+
+endmenu # Log levels
+
+#----------------------------------------------------------------------------#
+menu "Thread priorities"
+
+config ENCODER_THREAD_PRIO
+	int "Priority for encoder thread"
+	default 3
+	help
+	  This is a preemptible thread.
+
+config AUDIO_DATAPATH_THREAD_PRIO
+	int "Priority for audio datapath thread"
+	default 4
+	help
+	  This is a preemptible thread.
+
+config BUTTON_MSG_SUB_THREAD_PRIO
+	int "Thread priority for button subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to button events from zbus.
+
+config LE_AUDIO_MSG_SUB_THREAD_PRIO
+	int "Thread priority for LE Audio subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to LE Audio events from zbus.
+
+config BT_MGMT_MSG_SUB_THREAD_PRIO
+	int "Thread priority for bt_mgmt subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to BT management events from zbus.
+
+config CONTENT_CONTROL_MSG_SUB_THREAD_PRIO
+	int "Thread priority for content control subscriber"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will subscribe to content control events from zbus.
+
+config BTM_AUDIO_THREAD_PRIO
+	int "Thread priority for BTM audio thread"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will handle control of BTM module.
+
+config DSP_AUDIO_THREAD_PRIO
+	int "Thread priority for DSP audio thread"
+	default 5
+	help
+	  This is a preemptible thread.
+	  This thread will handle control of DSP module.
+
+endmenu # Thread priorities
+
+#----------------------------------------------------------------------------#
+menu "Stack sizes"
+
+config BUTTON_MSG_SUB_STACK_SIZE
+	int "Stack size for button subscriber"
+	default 2048
+
+config LE_AUDIO_MSG_SUB_STACK_SIZE
+	int "Stack size for LE Audio subscriber"
+	default 2048
+
+config BT_MGMT_MSG_SUB_STACK_SIZE
+	int "Stack size for bt_mgmt subscriber"
+	default 2048
+
+config CONTENT_CONTROL_MSG_SUB_STACK_SIZE
+	int "Stack size for content control subscriber"
+	default 1024
+
+config BTM_AUDIO_STACK_SIZE
+	int "Stack size for BTM audio thread"
+	default 1024
+
+config DSP_AUDIO_STACK_SIZE
+	int "Stack size for DSP audio thread"
+	default 1024
+
+endmenu # Stack sizes
+
+#----------------------------------------------------------------------------#
+menu "Zbus"
+
+config BUTTON_MSG_SUB_QUEUE_SIZE
+	int "Queue size for button subscriber"
+	default 4
+
+config CONTENT_CONTROL_MSG_SUB_QUEUE_SIZE
+	int "Queue size for content control subscriber"
+	default 4
+
+config AUDIO_MSG_SUB_QUEUE_SIZE
+	int "Queue size for audio subscriber"
+	default 4
+
+endmenu # Zbus
+endmenu # Audio

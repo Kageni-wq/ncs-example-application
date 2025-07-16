@@ -1,0 +1,13 @@
+# Target labels
+ app
+# Source files and their labels
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/CMakeFiles/app
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/CMakeFiles/app.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/CMakeFiles/app-complete.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-build.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-configure.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-download.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-install.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-mkdir.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-patch.rule
+C:/Stethy18.00/app/build/_sysbuild/sysbuild/images/app-prefix/src/app-stamp/app-update.rule

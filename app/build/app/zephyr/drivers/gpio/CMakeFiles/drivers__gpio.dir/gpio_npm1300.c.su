@@ -1,0 +1,7 @@
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:69:12:gpio_npm1300_port_set_masked_raw	24	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:100:12:gpio_npm1300_port_clear_bits_raw	8	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:95:12:gpio_npm1300_port_set_bits_raw	8	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:52:12:gpio_npm1300_port_get_raw	16	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:181:12:gpio_npm1300_port_toggle_bits	24	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:105:19:gpio_npm1300_configure	16	static
+C:/ncs/v3.0.2/zephyr/drivers/gpio/gpio_npm1300.c:204:12:gpio_npm1300_init	8	static

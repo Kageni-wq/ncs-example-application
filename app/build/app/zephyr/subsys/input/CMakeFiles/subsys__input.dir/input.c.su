@@ -1,0 +1,4 @@
+C:/ncs/v3.0.2/zephyr/subsys/input/input.c:21:13:input_process	16	static
+C:/ncs/v3.0.2/zephyr/subsys/input/input.c:76:13:input_thread	24	static
+C:/ncs/v3.0.2/zephyr/subsys/input/input.c:30:6:input_queue_empty	0	static
+C:/ncs/v3.0.2/zephyr/subsys/input/input.c:40:5:input_report	24	static

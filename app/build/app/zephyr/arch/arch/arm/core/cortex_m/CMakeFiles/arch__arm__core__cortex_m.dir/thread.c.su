@@ -1,0 +1,4 @@
+C:/ncs/v3.0.2/zephyr/arch/arm/core/cortex_m/thread.c:61:6:arch_new_thread	4	static
+C:/ncs/v3.0.2/zephyr/arch/arm/core/cortex_m/thread.c:520:6:arch_switch_to_main_thread	8	static
+C:/ncs/v3.0.2/zephyr/arch/arm/core/cortex_m/thread.c:596:13:arch_irq_unlock_outlined	0	static
+C:/ncs/v3.0.2/zephyr/arch/arm/core/cortex_m/thread.c:605:21:arch_irq_lock_outlined	0	static

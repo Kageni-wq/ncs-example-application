@@ -1,0 +1,2 @@
+C:/ncs/v3.0.2/zephyr/subsys/shell/modules/device_service.c:17:20:get_device_name	8	static
+C:/ncs/v3.0.2/zephyr/subsys/shell/modules/device_service.c:50:12:cmd_device_list	48	static

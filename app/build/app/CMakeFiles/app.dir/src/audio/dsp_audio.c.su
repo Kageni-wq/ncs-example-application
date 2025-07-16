@@ -1,0 +1,14 @@
+C:/Stethy18.00/app/src/audio/dsp_audio.c:121:13:dsp_audio_init	32	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:134:13:dsp_audio_stop	8	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:140:13:dsp_handle_filter_change	8	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:145:13:dsp_handle_source_change	8	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:150:13:dsp_handle_volume_change	8	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:155:13:dsp_handle_message	16	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:58:13:dsp_uart_cb	16	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:32:10:GetDspAudio	0	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:37:5:GetDspPower	0	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:42:5:GetDspId	0	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:47:22:GetDspUartDev	0	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:52:6:IsDspInit	0	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:166:5:dsp_init	8	static
+C:/Stethy18.00/app/src/audio/dsp_audio.c:78:6:dsp_audio_thread	32	static

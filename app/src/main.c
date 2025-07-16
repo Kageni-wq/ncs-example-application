@@ -1,80 +1,151 @@
 /*
- * Copyright (c) 2021 Nordic Semiconductor ASA
+ * Copyright (c) 2016 Intel Corporation
+ *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <stdio.h>
 #include <zephyr/kernel.h>
-#include <zephyr/drivers/sensor.h>
-#include <zephyr/logging/log.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/zbus/zbus.h>
+#include "button_handler.h"
+#include "main.h"
+#include "button_assignments.h"
+#include "zbus_common.h"
+#include "macros_common.h"
 
-#include <app/drivers/blink.h>
 
-#include <app_version.h>
 
-LOG_MODULE_REGISTER(main, CONFIG_APP_LOG_LEVEL);
+LOG_MODULE_REGISTER(main, CONFIG_MAIN_LOG_LEVEL);
 
-#define BLINK_PERIOD_MS_STEP 100U
-#define BLINK_PERIOD_MS_MAX  1000U
+ZBUS_SUBSCRIBER_DEFINE(button_evt_sub, CONFIG_BUTTON_MSG_SUB_QUEUE_SIZE);
 
-int main(void)
+ZBUS_CHAN_DECLARE(button_chan);
+
+ZBUS_CHAN_DEFINE(device_chan, struct device_msg, NULL, NULL, ZBUS_OBSERVERS_EMPTY,
+		 ZBUS_MSG_INIT(0));
+
+ZBUS_CHAN_DEFINE(audio_evt_chan, struct audio_msg, NULL, NULL, ZBUS_OBSERVERS_EMPTY,
+		 ZBUS_MSG_INIT(0));
+
+
+static struct k_thread button_msg_sub_thread_data;
+static k_tid_t button_msg_sub_thread_id;
+
+K_THREAD_STACK_DEFINE(button_msg_sub_thread_stack, CONFIG_BUTTON_MSG_SUB_STACK_SIZE);
+
+/*
+ * A build error on this line means your board is unsupported.
+ * See the sample documentation for information on how to fix this.
+ */
+
+
+static void button_msg_sub_thread(void)
 {
 	int ret;
-	unsigned int period_ms = BLINK_PERIOD_MS_MAX;
-	const struct device *sensor, *blink;
-	struct sensor_value last_val = { 0 }, val;
-
-	printk("Zephyr Example Application %s\n", APP_VERSION_STRING);
-
-	sensor = DEVICE_DT_GET(DT_NODELABEL(example_sensor));
-	if (!device_is_ready(sensor)) {
-		LOG_ERR("Sensor not ready");
-		return 0;
-	}
-
-	blink = DEVICE_DT_GET(DT_NODELABEL(blink_led));
-	if (!device_is_ready(blink)) {
-		LOG_ERR("Blink LED not ready");
-		return 0;
-	}
-
-	ret = blink_off(blink);
-	if (ret < 0) {
-		LOG_ERR("Could not turn off LED (%d)", ret);
-		return 0;
-	}
-
-	printk("Use the sensor to change LED blinking period\n");
+	const struct zbus_channel *chan;
 
 	while (1) {
-		ret = sensor_sample_fetch(sensor);
-		if (ret < 0) {
-			LOG_ERR("Could not fetch sample (%d)", ret);
-			return 0;
+		ret = zbus_sub_wait(&button_evt_sub, &chan, K_FOREVER);
+		ERR_CHK(ret);
+
+		struct button_msg msg;
+
+		ret = zbus_chan_read(chan, &msg, ZBUS_READ_TIMEOUT_MS);
+		ERR_CHK(ret);
+
+		LOG_DBG("Got btn evt from queue - id = %d, action = %d", msg.button_pin,
+			msg.button_action);
+
+		if (msg.button_action != BUTTON_PRESS) {
+			LOG_WRN("Unhandled button action");
+			return;
 		}
 
-		ret = sensor_channel_get(sensor, SENSOR_CHAN_PROX, &val);
-		if (ret < 0) {
-			LOG_ERR("Could not get sample (%d)", ret);
-			return 0;
+		switch (msg.button_pin) {
+		case BUTTON_0:
+			debug_led_toggle(0);
+			break;
+
+		case BUTTON_1:
+			debug_led_toggle(1);
+			break;
+
+		case BUTTON_2:
+			debug_led_toggle(2);
+			break;
+
+		case BUTTON_3:
+			debug_led_toggle(3);
+			break;
+		default:
+			LOG_WRN("Unexpected/unhandled button id: %d", msg.button_pin);
 		}
 
-		if ((last_val.val1 == 0) && (val.val1 == 1)) {
-			if (period_ms == 0U) {
-				period_ms = BLINK_PERIOD_MS_MAX;
-			} else {
-				period_ms -= BLINK_PERIOD_MS_STEP;
-			}
+		STACK_USAGE_PRINT("button_msg_thread", &button_msg_sub_thread_data);
+	}
+}
 
-			printk("Proximity detected, setting LED period to %u ms\n",
-			       period_ms);
-			blink_set_period_ms(blink, period_ms);
-		}
+static int zbus_subscribers_create(void)
+{
+	int ret;
 
-		last_val = val;
-
-		k_sleep(K_MSEC(100));
+	button_msg_sub_thread_id = k_thread_create(
+		&button_msg_sub_thread_data, button_msg_sub_thread_stack,
+		CONFIG_BUTTON_MSG_SUB_STACK_SIZE, (k_thread_entry_t)button_msg_sub_thread, NULL,
+		NULL, NULL, K_PRIO_PREEMPT(CONFIG_BUTTON_MSG_SUB_THREAD_PRIO), 0, K_NO_WAIT);
+	ret = k_thread_name_set(button_msg_sub_thread_id, "BUTTON_MSG_SUB");
+	if (ret) {
+		LOG_ERR("Failed to create button_msg thread");
+		return ret;
 	}
 
 	return 0;
 }
+
+static int zbus_link_producers_observers(void)
+{
+	int ret;
+
+	if (!IS_ENABLED(CONFIG_ZBUS)) {
+		return -ENOTSUP;
+	}
+
+	ret = zbus_chan_add_obs(&button_chan, &button_evt_sub, ZBUS_ADD_OBS_TIMEOUT_MS);
+	if (ret) {
+		LOG_ERR("Failed to add button sub");
+		return ret;
+	}
+
+	return 0;
+}
+
+int main(void)
+{
+	int ret;
+
+	LOG_INF("Hello World\r\n");
+	
+	ret = button_handler_init();
+	if (ret < 0) {
+		return 0;
+	}
+
+	ret = zbus_subscribers_create();
+	ERR_CHK_MSG(ret, "Failed to create zbus subscriber threads");
+
+	ret = zbus_link_producers_observers();
+	ERR_CHK_MSG(ret, "Failed to link zbus producers and observers");
+
+	ret = system_init();
+	if (ret < 0) {
+		return 0;
+	}
+
+	while (1) {
+		k_msleep(SLEEP_TIME_MS);
+	}
+	return 0;
+}
+
 
